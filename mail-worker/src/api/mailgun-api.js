@@ -3,7 +3,7 @@ import emailService from '../service/email-service';
 import accountService from '../service/account-service';
 import { isDel, emailConst } from '../const/entity-const';
 
-app.post('/mailgun-webhook', async (c) => {
+app.post('/webhooks/mailgun', async (c) => {
     const body = await c.req.parseBody();
     console.log('Mailgun body keys:', JSON.stringify(Object.keys(body)));
 
