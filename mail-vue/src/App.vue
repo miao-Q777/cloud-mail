@@ -11,6 +11,6 @@ const settingStore = useSettingStore()
 import zhCn from 'element-plus/es/locale/lang/zh-cn';
 import('@/icons/index.js')
 const { locale } = useI18n()
-locale.value = settingStore.lang || ((navigator.language || 'zh').startsWith('en') ? 'en' : 'zh')
-watch(() => settingStore.lang, () => locale.value = settingStore.lang || ((navigator.language || 'zh').startsWith('en') ? 'en' : 'zh'))
+locale.value = settingStore.lang || 'en' || ((navigator.language || 'zh').startsWith('en') ? 'en' : 'zh')
+watch(() => settingStore.lang, () => locale.value = settingStore.lang || 'en' || ((navigator.language || 'zh').startsWith('en') ? 'en' : 'zh'))
 </script>
